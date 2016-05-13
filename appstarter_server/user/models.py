@@ -9,6 +9,12 @@ class User(models.Model):
     realName = models.CharField(max_length=20)
     nickName = models.CharField(max_length=20)
     registerTime = models.DateField
+    city = models.CharField(max_length=20)
+    qq = models.CharField(max_length=20)
+    wechat = models.CharField(max_length=20)
+    hobby = models.CharField(max_length=100)
+    introduction = models.CharField(max_length=500)
+    birthday = models.DateField
     userExtra = models.OneToOneField(AbstractUserExtra , primary_key=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -20,10 +26,4 @@ class AbstractUserExtra(models.Model):
         abstract = True
 
 class UserExtra(AbstractUserExtra):
-
-    city = models.CharField(max_length=20)
-    qq = models.CharField(max_length=20)
-    wechat = models.CharField(max_length=20)
-    hobby = models.CharField(max_length=100)
-    introduction = models.CharField(max_length=500)
-    birthday = models.DateField
+    pass
