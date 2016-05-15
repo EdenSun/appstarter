@@ -15,15 +15,6 @@ class User(models.Model):
     hobby = models.CharField(max_length=100)
     introduction = models.CharField(max_length=500)
     birthday = models.DateField
-    userExtra = models.OneToOneField(AbstractUserExtra , primary_key=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
-class AbstractUserExtra(models.Model):
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True)
-    class Meta:
-        abstract = True
-
-class UserExtra(AbstractUserExtra):
-    pass

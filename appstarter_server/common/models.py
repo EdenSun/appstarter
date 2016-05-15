@@ -41,4 +41,9 @@ class Dictionary(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
-class Area()
+class Area(models.Model):
+    name = models.CharField(max_length=100)
+    parentId = models.ForeignKey('Area')
+    level = models.IntegerField
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
